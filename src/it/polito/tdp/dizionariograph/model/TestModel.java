@@ -9,13 +9,17 @@ public class TestModel {
 		Model model = new Model();
 		
 		model.createGraph(4);
-		System.out.println(String.format("**Grafo creato**\n"));
+		//System.out.println(model.getGrafo());
+		//System.out.println(String.format("**Grafo creato**\n"));
+		//System.out.format("creati %d vertici e %d archi \n", model.getGrafo().vertexSet().size(), model.getGrafo().edgeSet().size());
 		
-		List<String> vicini = model.displayNeighbours("casa");
-		System.out.println("Neighbours di casa: " + vicini + "\n");
+		//System.out.println("\n******************************\n");
+		String parolaDaInserire="casa";
+		List<String> vicini = model.displayNeighbours(parolaDaInserire);
+		System.out.printf("Neighbours di %s: " + vicini.toString() + "\n", parolaDaInserire );
 		
 		System.out.println("Cerco il vertice con grado massimo...");
-		System.out.println(model.findMaxDegree());
+		System.out.println(model.findMaxDegree(parolaDaInserire));
 	}
 
 }
